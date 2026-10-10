@@ -1,0 +1,5 @@
+Nanum Myeongjo Korean webfonts (Regular 400, Bold 700)
+Source: https://cdn.jsdelivr.net/npm/@fontsource/nanum-myeongjo@latest/files/
+Files: nanum-myeongjo-korean-400-normal.woff2, nanum-myeongjo-korean-700-normal.woff2
+License: NanumMyeongjo-OFL.txt (SIL Open Font License 1.1)
+Original font family: https://github.com/google/fonts/tree/main/ofl/nanummyeongjo

@@ -1,0 +1,227 @@
+.page {
+  overflow: hidden;
+  background: #000;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font: 700 11px/1.4 var(--sans);
+  letter-spacing: 0.24em;
+}
+
+.period { color: var(--gold); }
+
+.intro {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(76px, 10vw, 150px) 32px 70px;
+  text-align: center;
+}
+
+.intro h1 {
+  margin: 20px 0 19px;
+  font-size: clamp(62px, 9vw, 132px);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.intro > p:last-child {
+  color: #c7c5bf;
+  font-size: clamp(15px, 1.4vw, 19px);
+  word-break: keep-all;
+}
+
+.artworkSection {
+  width: min(1100px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.artwork {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1672 / 941;
+  background: #100805;
+  border: 1px solid #ffffff20;
+}
+
+.artwork img { object-fit: cover; }
+
+.artworkCaption,
+.workFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  color: #8e8d87;
+  font: 700 10px/1.5 var(--sans);
+  letter-spacing: 0.17em;
+}
+
+.artworkCaption { padding-top: 15px; }
+
+.story {
+  width: min(720px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: clamp(112px, 15vw, 220px) 0 clamp(140px, 17vw, 240px);
+  text-align: center;
+}
+
+.story h2 {
+  margin: 22px 0 44px;
+  font-size: clamp(38px, 5.2vw, 66px);
+  line-height: 1.3;
+  word-break: keep-all;
+}
+
+.story h2 em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.storyCopy {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #aaa9a3;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 2.05;
+  word-break: keep-all;
+}
+
+.storyCopy p + p { margin-top: 18px; }
+
+.storyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 44px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.storyLink span {
+  font-size: 18px;
+  transition: transform 220ms ease;
+}
+
+.storyLink:hover span { transform: translate(3px, -3px); }
+
+.work { border-top: 1px solid var(--line); }
+
+.workHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 48px;
+  width: min(1100px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 80px 0 46px;
+}
+
+.workHeading h2 {
+  margin-top: 14px;
+  font-size: clamp(40px, 5vw, 64px);
+}
+
+.workHeading > p {
+  max-width: 310px;
+  color: #aaa9a3;
+  font-size: 14px;
+  line-height: 1.8;
+  word-break: keep-all;
+}
+
+.marquee { overflow: hidden; }
+
+.posterTrack {
+  display: flex;
+  width: max-content;
+  animation: posters-right 110s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .posterTrack,
+.marquee:focus-within .posterTrack { animation-play-state: paused; }
+
+.posterGroup {
+  display: flex;
+  flex: none;
+  gap: 12px;
+  padding-right: 12px;
+}
+
+.poster {
+  position: relative;
+  flex: none;
+  height: 310px;
+  margin: 0;
+  overflow: hidden;
+  background: #171717;
+}
+
+.poster img {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+.poster figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  gap: 4px;
+  padding: 42px 14px 13px;
+  background: linear-gradient(transparent, #000c);
+  color: white;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.poster:hover figcaption { opacity: 1; }
+
+.poster figcaption span {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.poster figcaption strong {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.workFooter {
+  width: min(1100px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 19px 0 110px;
+}
+
+@keyframes posters-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@media (max-width: 700px) {
+  .intro { padding: 66px 24px 50px; }
+  .intro h1 { font-size: clamp(60px, 15vw, 88px); }
+  .artworkSection,
+  .workHeading,
+  .workFooter { width: calc(100% - 32px); }
+  .artwork { aspect-ratio: 1.18; }
+  .artworkCaption span:last-child { display: none; }
+  .story { padding: 110px 0 140px; }
+  .story h2 { margin-bottom: 30px; }
+  .workHeading { display: block; padding: 62px 0 34px; }
+  .workHeading > p { margin-top: 20px; }
+  .poster { height: 230px; }
+  .workFooter { padding-bottom: 75px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; }
+  .posterTrack { animation: none; }
+  .posterGroup:last-child { display: none; }
+  .poster figcaption { opacity: 1; }
+}
